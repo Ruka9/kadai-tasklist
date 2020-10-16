@@ -1,5 +1,5 @@
+<% if logged_in? %>
 <h1>タスク一覧</h1>
-
 <% if @tasks.any? %>
   <table class="table table-striped">
     <thead>
@@ -19,8 +19,7 @@
       <% end %>
     </tbody>
   </table>
-  <div>
-    <%= paginate @tasks %>
-  </div>
+  <div><%= paginate @tasks %></div>
 <% end %>
-<%= link_to '新規タスクの投稿', root_url, class: "btn btn-primary" %>
+<%= link_to '新規タスクの投稿', new_path, class: "btn btn-primary" %>
+<% end %>
